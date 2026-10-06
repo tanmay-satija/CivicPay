@@ -68,7 +68,7 @@ docker compose up --build -d
 
 Open the dashboard at <http://localhost:5080> and enter the key through **API access**; use Swagger's **Authorize** control for API calls. Compose applies the committed SQL Server migrations and seeds fictional records. Database data persists in a named volume; `docker compose down` stops containers while retaining it. Do not run both startup paths on port 5080 simultaneously.
 
-SQL Server's container targets `linux/amd64`; Apple Silicon emulation is environment-dependent. An external SQL Server is another option in the [setup guide](CivicPay/docs/IMPLEMENTATION_GUIDE.md). Docker/SQL Server execution has not been verified here. The supplied Compose configuration uses loopback ports, `sa` and a trusted local certificate for demonstration; it is not a production security configuration. `.env` and local databases are ignored by Git and Docker build context.
+SQL Server's container targets `linux/amd64`; Apple Silicon emulation is environment-dependent. An external SQL Server is another option in the [setup guide](CivicPay/docs/IMPLEMENTATION_GUIDE.md). Compose configuration validation and the Docker image build passed in [GitHub Actions](https://github.com/tanmay-satija/CivicPay/actions/runs/37437547687); container startup and SQL Server runtime remain unverified. The supplied Compose configuration uses loopback ports, `sa` and a trusted local certificate for demonstration; it is not a production security configuration. `.env` and local databases are ignored by Git and Docker build context.
 
 ## Try the API
 
@@ -278,9 +278,9 @@ With the seeded API running, Python 3 can exercise the live workflow:
 python3 scripts/smoke.py
 ```
 
-It writes synthetic test records and intentional failures. Set `CIVICPAY_URL` for another port and `CIVICPAY_API_KEY` for secured mode. The SQL Server test requires a disposable `CivicPayTests_*` connection via `CIVICPAY_TEST_SQLSERVER`; see [test setup](CivicPay/docs/IMPLEMENTATION_GUIDE.md). The [CI workflow](.github/workflows/ci.yml) defines portable and opt-in SQL Server jobs; no GitHub Actions run is claimed.
+It writes synthetic test records and intentional failures. Set `CIVICPAY_URL` for another port and `CIVICPAY_API_KEY` for secured mode. The SQL Server test requires a disposable `CivicPayTests_*` connection via `CIVICPAY_TEST_SQLSERVER`; see [test setup](CivicPay/docs/IMPLEMENTATION_GUIDE.md). The [CI workflow](.github/workflows/ci.yml) defines portable and opt-in SQL Server jobs. The [first published portable run](https://github.com/tanmay-satija/CivicPay/actions/runs/37437547687) passed restore, build, tests, dashboard checks, Compose validation and Docker image build; the SQL Server job was skipped.
 
-**Verification boundary:** build/tests, published SQLite runtime, primary APIs, imports, retries, Swagger and in-app-browser dashboard workflows were executed. SQL Server runtime/migration execution and Docker execution remain unverified. Chrome/Firefox, production deployment and accessibility audits were not executed. [Exact evidence and limitations](CivicPay/docs/UI_UX_VERIFICATION.md). [Clean-source README setup checks](CivicPay/docs/README_REVIEW.md).
+**Verification boundary:** build/tests, published SQLite runtime, primary APIs, imports, retries, Swagger and in-app-browser dashboard workflows were executed. SQL Server runtime/migration execution and Docker container startup remain unverified. The Docker image build and Compose configuration validation passed in the linked GitHub Actions run. Chrome/Firefox, production deployment and accessibility audits were not executed. [Exact evidence and limitations](CivicPay/docs/UI_UX_VERIFICATION.md). [Clean-source README setup checks](CivicPay/docs/README_REVIEW.md).
 
 ## Implementation case study
 

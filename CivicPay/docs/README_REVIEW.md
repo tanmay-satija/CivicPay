@@ -41,8 +41,10 @@ Evidence: [restore](verification/readme-restore.log), [build](verification/readm
 
 ## Not executed
 
-Docker startup/build, SQL Server migrations/runtime, GitHub Actions, remote cloning, live GitHub rendering, Windows/Git Bash/WSL runs and production deployment were not verified. The preview is a local Markdown/Mermaid render, not a GitHub screenshot. Earlier [dashboard verification](UI_UX_VERIFICATION.md) records its separate browser checks and limitations.
+At the time of the local README review, Docker startup/build, SQL Server migrations/runtime, GitHub Actions, remote cloning, live GitHub rendering, Windows/Git Bash/WSL runs and production deployment had not been verified. Publication checks below supersede the clone, GitHub rendering and Docker build/Compose validation boundaries. The preview is a local Markdown/Mermaid render, not a GitHub screenshot. Earlier [dashboard verification](UI_UX_VERIFICATION.md) records its separate browser checks and limitations.
 
 ## Publication preparation
 
 The clone command now points to `https://github.com/tanmay-satija/CivicPay.git`. Personal absolute workspace paths in saved verification output were replaced with `<workspace>` before publication; test results are unchanged. Publication does not imply additional runtime verification.
+
+Published as a public repository on October 6, 2026. A fresh GitHub clone matched all 130 reviewed files byte-for-byte at commit `96e92b41a42bd6140379800319f0f05fcdb7c795`. The live repository showed the README, disclaimer and dashboard images; the embedded dashboard screenshots loaded successfully. The [first GitHub Actions run](https://github.com/tanmay-satija/CivicPay/actions/runs/37437547687) passed restore, Release build, .NET tests, JavaScript syntax/helper tests, Compose configuration validation and Docker image build. Its opt-in SQL Server job was skipped. Container startup, SQL Server migrations/runtime, Windows and production deployment remain unverified.

@@ -1,0 +1,88 @@
+{
+  "repository": "https://github.com/tanmay-satija/CivicPay",
+  "commit": "96e92b41a42bd6140379800319f0f05fcdb7c795",
+  "filesCompared": 130,
+  "cloneMismatches": [],
+  "workflowRun": "https://github.com/tanmay-satija/CivicPay/actions/runs/37437547687",
+  "sqlServerJob": "skipped",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-dotnet@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Run dotnet restore",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 4
+    },
+    {
+      "name": "Run dotnet build --no-restore -c Release",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 5
+    },
+    {
+      "name": "Run dotnet test --no-build -c Release --logger trx",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 6
+    },
+    {
+      "name": "Run node --check dashboard/app.js",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 7
+    },
+    {
+      "name": "Run node --test tests/dashboard/*.test.cjs",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 8
+    },
+    {
+      "name": "Run docker compose --env-file .env.example config --quiet",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 9
+    },
+    {
+      "name": "Run docker build -t civicpay:ci .",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 10
+    },
+    {
+      "name": "Post Run actions/setup-dotnet@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 19
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 20
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 21
+    }
+  ]
+}
