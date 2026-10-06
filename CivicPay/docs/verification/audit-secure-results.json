@@ -1,0 +1,16 @@
+{
+  "binary": "/tmp/civicpay-audit-publish-final/CivicPay.Api.dll",
+  "environment": "Production",
+  "provider": "SQLite",
+  "seed": false,
+  "missingKey": 401,
+  "validKey": 200,
+  "emptyInitialMunicipalities": true,
+  "emptyInitialAccounts": true,
+  "catalogueCount": 5,
+  "configurationWithUtility": "passed",
+  "accountImport": "RECONCILED",
+  "paymentCreatedAndReplayed": "passed",
+  "finalBalance": 75,
+  "secretPersistedInEvidence": false
+}

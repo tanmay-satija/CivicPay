@@ -1,0 +1,37 @@
+{
+  "executedAt": "2026-10-06T07:15:36.171267+00:00",
+  "health": {
+    "status": "Healthy",
+    "database": "Sqlite",
+    "synthetic": true
+  },
+  "servedDashboardAssetsMatchSource": true,
+  "backendAndOriginalTestFilesUnchanged": 43,
+  "oneStoredUiRetryRecord": true,
+  "uiPaymentAmount": 25.0,
+  "uiAccountBalanceAfterOneDeduction": 4434.5,
+  "swaggerJson": true,
+  "metrics": {
+    "totalApiRequests": 60,
+    "successfulRequests": 45,
+    "failedRequests": 15,
+    "successRate": 75,
+    "successfulTransactions": 190,
+    "failedTransactions": 12,
+    "validationFailures": 15,
+    "averageResponseMs": 5.8,
+    "totalAmount": 209070.5
+  },
+  "importBatches": 7,
+  "freshBrowserConsoleErrors": 0,
+  "freshBrowserConsoleWarnings": 0,
+  "cachedDocumentCompatibility": {
+    "noticeDisplayed": true,
+    "refreshLoadedCurrentOverview": true,
+    "apiConnected": true,
+    "consoleErrors": 0,
+    "consoleWarnings": 0
+  },
+  "municipalityCodeErrorSearchVerified": true,
+  "refreshTimestampUsesUtc": true
+}

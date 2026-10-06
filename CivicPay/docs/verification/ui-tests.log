@@ -1,0 +1,10 @@
+Test run for <workspace>/CivicPay/tests/CivicPay.UnitTests/bin/Release/net10.0/CivicPay.UnitTests.dll (.NETCoreApp,Version=v10.0)
+Test run for <workspace>/CivicPay/tests/CivicPay.IntegrationTests/bin/Release/net10.0/CivicPay.IntegrationTests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.A total of 1 test files matched the specified pattern.
+
+[xUnit.net 00:00:00.08]     CivicPay.IntegrationTests.SqlServerTests.SqlServer_migrations_constraints_and_seeding [SKIP]
+
+Passed!  - Failed:     0, Passed:    27, Skipped:     0, Total:    27, Duration: 25 ms - CivicPay.UnitTests.dll (net10.0)
+  Skipped CivicPay.IntegrationTests.SqlServerTests.SqlServer_migrations_constraints_and_seeding [1 ms]
+
+Passed!  - Failed:     0, Passed:    44, Skipped:     1, Total:    45, Duration: 4 s - CivicPay.IntegrationTests.dll (net10.0)

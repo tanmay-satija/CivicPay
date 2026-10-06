@@ -1,0 +1,4 @@
+municipalityCode,accountNumber,paymentType,balance
+DEMO-COUNTY,LEGACY-PT-1001,PropertyTax,1000
+PINE-VALLEY,LEGACY-PK-1001,ParkingTicket,75
+RIVERBEND,LEGACY-UT-1001,Utility,500

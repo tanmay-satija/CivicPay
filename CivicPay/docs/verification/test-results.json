@@ -1,0 +1,45 @@
+{
+  "verifiedOn": "2026-10-05 (America/Edmonton)",
+  "sdk": "10.0.401",
+  "configuration": "Release",
+  "provider": "SQLite relational databases",
+  "results": {
+    "UnitTests": {
+      "total": "27",
+      "executed": "27",
+      "passed": "27",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "IntegrationTests": {
+      "total": "22",
+      "executed": "21",
+      "passed": "21",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "skipped": "SQL Server test: CIVICPAY_TEST_SQLSERVER not configured"
+}

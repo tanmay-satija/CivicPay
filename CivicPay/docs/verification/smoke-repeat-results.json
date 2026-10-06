@@ -1,0 +1,58 @@
+{
+  "health": "passed",
+  "accounts": {
+    "batchId": "09e5c0aa-5923-4024-b225-bd9a4eb26385",
+    "kind": "accounts",
+    "sourceRecordCount": 3,
+    "importedRecordCount": 3,
+    "rejectedRecordCount": 0,
+    "skippedRecordCount": 0,
+    "totalSourceAmount": 1575.0,
+    "totalImportedAmount": 1575.0,
+    "difference": 0.0,
+    "sourceAmountComplete": true,
+    "status": "RECONCILED"
+  },
+  "validImport": {
+    "batchId": "6c612c61-897b-48fe-b303-d6ec5352bd09",
+    "kind": "payments",
+    "sourceRecordCount": 3,
+    "importedRecordCount": 3,
+    "rejectedRecordCount": 0,
+    "skippedRecordCount": 0,
+    "totalSourceAmount": 250.5,
+    "totalImportedAmount": 250.5,
+    "difference": 0.0,
+    "sourceAmountComplete": true,
+    "status": "RECONCILED"
+  },
+  "repeatedImport": {
+    "batchId": "9e80eaa8-2a83-4ceb-8714-d60e14dbfc68",
+    "kind": "payments",
+    "sourceRecordCount": 3,
+    "importedRecordCount": 0,
+    "rejectedRecordCount": 0,
+    "skippedRecordCount": 3,
+    "totalSourceAmount": 250.5,
+    "totalImportedAmount": 0.0,
+    "difference": 250.5,
+    "sourceAmountComplete": true,
+    "status": "WARNING"
+  },
+  "invalidImport": {
+    "batchId": "630551d5-a8d1-436e-9b8f-e9166131b73b",
+    "kind": "payments",
+    "sourceRecordCount": 8,
+    "importedRecordCount": 0,
+    "rejectedRecordCount": 7,
+    "skippedRecordCount": 1,
+    "totalSourceAmount": 342.0,
+    "totalImportedAmount": 0.0,
+    "difference": 342.0,
+    "sourceAmountComplete": false,
+    "status": "WARNING"
+  },
+  "idempotency": "passed",
+  "malformedJson": "passed",
+  "swagger": "passed"
+}

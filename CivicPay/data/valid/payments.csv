@@ -1,0 +1,4 @@
+municipalityCode,accountNumber,paymentType,amount,transactionDate,externalReference
+DEMO-COUNTY,LEGACY-PT-1001,PropertyTax,125.50,2026-01-01,LEGACY-PAY-1001
+PINE-VALLEY,LEGACY-PK-1001,ParkingTicket,75.00,2026-01-01,LEGACY-PAY-1002
+RIVERBEND,LEGACY-UT-1001,Utility,50.00,2026-01-01,LEGACY-PAY-1003

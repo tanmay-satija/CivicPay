@@ -10,9 +10,9 @@ A simulated multi-tenant municipal SaaS implementation platform demonstrating co
 
 [Run locally](#quick-start) · [API example](#try-the-api) · [Riverbend case study](#implementation-case-study) · [Documentation](#documentation-index)
 
-![CivicPay administrative dashboard](CivicPay/docs/screenshots/ui-overview-desktop.jpg)
+![CivicPay administrative dashboard](docs/screenshots/ui-overview-desktop.jpg)
 
-Built for an implementation specialist answering: **Which client needs attention? Why did a request fail? Did the migration reconcile?** [Full overview screenshot](CivicPay/docs/screenshots/ui-overview.jpg).
+Built for an implementation specialist answering: **Which client needs attention? Why did a request fail? Did the migration reconcile?** [Full overview screenshot](docs/screenshots/ui-overview.jpg).
 
 ## What the project demonstrates
 
@@ -29,7 +29,7 @@ Municipalities share one database. Records and references are scoped by municipa
 
 ## Quick start
 
-The quickest path uses **SQLite**, so no SQL Server or Docker installation is needed. Install a [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) compatible with [global.json](CivicPay/global.json): 10.0.401 or a newer 10.0 feature band. Commands use Bash on macOS/Linux or a .NET-enabled Git Bash/WSL environment on Windows.
+The quickest path uses **SQLite**, so no SQL Server or Docker installation is needed. Install a [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) compatible with [global.json](global.json): 10.0.401 or a newer 10.0 feature band. Commands use Bash on macOS/Linux or a .NET-enabled Git Bash/WSL environment on Windows.
 
 Clone the repository, then enter its `CivicPay` directory.
 
@@ -68,7 +68,7 @@ docker compose up --build -d
 
 Open the dashboard at <http://localhost:5080> and enter the key through **API access**; use Swagger's **Authorize** control for API calls. Compose applies the committed SQL Server migrations and seeds fictional records. Database data persists in a named volume; `docker compose down` stops containers while retaining it. Do not run both startup paths on port 5080 simultaneously.
 
-SQL Server's container targets `linux/amd64`; Apple Silicon emulation is environment-dependent. An external SQL Server is another option in the [setup guide](CivicPay/docs/IMPLEMENTATION_GUIDE.md). Docker/SQL Server execution has not been verified here. The supplied Compose configuration uses loopback ports, `sa` and a trusted local certificate for demonstration; it is not a production security configuration. `.env` and local databases are ignored by Git and Docker build context.
+SQL Server's container targets `linux/amd64`; Apple Silicon emulation is environment-dependent. An external SQL Server is another option in the [setup guide](docs/IMPLEMENTATION_GUIDE.md). Docker/SQL Server execution has not been verified here. The supplied Compose configuration uses loopback ports, `sa` and a trusted local certificate for demonstration; it is not a production security configuration. `.env` and local databases are ignored by Git and Docker build context.
 
 ## Try the API
 
@@ -120,7 +120,7 @@ Expected response: **HTTP 422**, with no balance deduction:
 }
 ```
 
-Every API response includes `X-Correlation-ID`. Keep the reference and correlation ID for investigation. Unknown accounts return 404; unsupported services, overpayments and disallowed partial payments return 422. Dates must be between `2000-01-01` and today UTC. CAD is implicit in municipal configuration; the payment DTO has no currency field. [Complete API contract](CivicPay/docs/API_INTEGRATION_GUIDE.md).
+Every API response includes `X-Correlation-ID`. Keep the reference and correlation ID for investigation. Unknown accounts return 404; unsupported services, overpayments and disallowed partial payments return 422. Dates must be between `2000-01-01` and today UTC. CAD is implicit in municipal configuration; the payment DTO has no currency field. [Complete API contract](docs/API_INTEGRATION_GUIDE.md).
 
 ## Architecture
 
@@ -160,7 +160,7 @@ flowchart TB
     style app fill:#fafbfd,stroke:#c4d0dc
 ```
 
-SQL Server and SQLite are alternative providers, not replicated databases. Monitoring also queries EF Core directly; request/error telemetry is persisted on a best-effort basis. Database constraints and business records, rather than telemetry alone, protect transaction correctness. [Architecture and tradeoffs](CivicPay/docs/ARCHITECTURE.md) · [Data model](CivicPay/docs/DATA_DICTIONARY.md).
+SQL Server and SQLite are alternative providers, not replicated databases. Monitoring also queries EF Core directly; request/error telemetry is persisted on a best-effort basis. Database constraints and business records, rather than telemetry alone, protect transaction correctness. [Architecture and tradeoffs](docs/ARCHITECTURE.md) · [Data model](docs/DATA_DICTIONARY.md).
 
 ### Integration workflow
 
@@ -215,7 +215,7 @@ Reconciliation uses **source amount − newly imported amount = difference**. Sk
 | `data/valid/payments.csv`, after accounts   | 3 imported; CAD 250.50 source/imported; zero difference; RECONCILED   |
 | Same payment file again                     | 3 skipped; CAD 0 newly imported; CAD 250.50 difference; WARNING       |
 
-SQL schema/migration artifacts and reporting queries are in [sql/](CivicPay/sql/): [schema](CivicPay/sql/schema.sql), [transaction summary](CivicPay/sql/transaction_summary.sql), [municipal performance](CivicPay/sql/municipality_performance.sql), [failed requests](CivicPay/sql/failed_transactions.sql) and [reconciliation](CivicPay/sql/reconciliation.sql). CSV imports run through application validation and EF Core; there is no direct legacy database connector or automated ETL platform. [Migration guide](CivicPay/docs/DATA_MIGRATION_GUIDE.md).
+SQL schema/migration artifacts and reporting queries are in [sql/](sql/): [schema](sql/schema.sql), [transaction summary](sql/transaction_summary.sql), [municipal performance](sql/municipality_performance.sql), [failed requests](sql/failed_transactions.sql) and [reconciliation](sql/reconciliation.sql). CSV imports run through application validation and EF Core; there is no direct legacy database connector or automated ETL platform. [Migration guide](docs/DATA_MIGRATION_GUIDE.md).
 
 ## Screenshots
 
@@ -224,11 +224,11 @@ Actual browser captures from the running SQLite sandbox. Data is fictional; seed
 <details>
 <summary>Error investigation and migration reconciliation</summary>
 
-![Safe error investigation](CivicPay/docs/screenshots/ui-error-investigation.jpg)
+![Safe error investigation](docs/screenshots/ui-error-investigation.jpg)
 
-![Migration batches and reconciliation](CivicPay/docs/screenshots/ui-imports.jpg)
+![Migration batches and reconciliation](docs/screenshots/ui-imports.jpg)
 
-[Batch row diagnostics](CivicPay/docs/screenshots/ui-batch-investigation.jpg) · [Municipality configuration](CivicPay/docs/screenshots/ui-municipalities.jpg) · [Phone layout](CivicPay/docs/screenshots/ui-mobile.jpg)
+[Batch row diagnostics](docs/screenshots/ui-batch-investigation.jpg) · [Municipality configuration](docs/screenshots/ui-municipalities.jpg) · [Phone layout](docs/screenshots/ui-mobile.jpg)
 
 </details>
 
@@ -245,7 +245,7 @@ ConnectionStrings__CivicPay='Data Source=/tmp/civicpay-portfolio-demo.db;Foreign
   bash scripts/run-demo.sh
 ```
 
-Use an unused path; stop the current server before starting another on the same port. If changing ports, set `CIVICPAY_URL` for the Python script. [Executed browser checks and reporting definitions](CivicPay/docs/UI_UX_VERIFICATION.md).
+Use an unused path; stop the current server before starting another on the same port. If changing ports, set `CIVICPAY_URL` for the Python script. [Executed browser checks and reporting definitions](docs/UI_UX_VERIFICATION.md).
 
 ## Technology stack
 
@@ -278,13 +278,13 @@ With the seeded API running, Python 3 can exercise the live workflow:
 python3 scripts/smoke.py
 ```
 
-It writes synthetic test records and intentional failures. Set `CIVICPAY_URL` for another port and `CIVICPAY_API_KEY` for secured mode. The SQL Server test requires a disposable `CivicPayTests_*` connection via `CIVICPAY_TEST_SQLSERVER`; see [test setup](CivicPay/docs/IMPLEMENTATION_GUIDE.md). The [CI workflow](.github/workflows/ci.yml) defines portable and opt-in SQL Server jobs; no GitHub Actions run is claimed.
+It writes synthetic test records and intentional failures. Set `CIVICPAY_URL` for another port and `CIVICPAY_API_KEY` for secured mode. The SQL Server test requires a disposable `CivicPayTests_*` connection via `CIVICPAY_TEST_SQLSERVER`; see [test setup](docs/IMPLEMENTATION_GUIDE.md). The [CI workflow](../.github/workflows/ci.yml) defines portable and opt-in SQL Server jobs; no GitHub Actions run is claimed.
 
-**Verification boundary:** build/tests, published SQLite runtime, primary APIs, imports, retries, Swagger and in-app-browser dashboard workflows were executed. SQL Server runtime/migration execution and Docker execution remain unverified. Chrome/Firefox, production deployment and accessibility audits were not executed. [Exact evidence and limitations](CivicPay/docs/UI_UX_VERIFICATION.md). [Clean-source README setup checks](CivicPay/docs/README_REVIEW.md).
+**Verification boundary:** build/tests, published SQLite runtime, primary APIs, imports, retries, Swagger and in-app-browser dashboard workflows were executed. SQL Server runtime/migration execution and Docker execution remain unverified. Chrome/Firefox, production deployment and accessibility audits were not executed. [Exact evidence and limitations](docs/UI_UX_VERIFICATION.md). [Clean-source README setup checks](docs/README_REVIEW.md).
 
 ## Implementation case study
 
-[Riverbend: requirements and traceability](CivicPay/docs/case-study/RIVERBEND_REQUIREMENTS.md) follows **Requirements → Configuration → Integration → Migration → Testing → Validation → Go-Live**, with [solution decisions](CivicPay/docs/case-study/RIVERBEND_SOLUTION_DESIGN.md), [source mapping](CivicPay/docs/case-study/RIVERBEND_MAPPING.md), [planned acceptance tests](CivicPay/docs/case-study/RIVERBEND_TEST_PLAN.md) and a [go-live checklist](CivicPay/docs/case-study/RIVERBEND_GO_LIVE_CHECKLIST.md).
+[Riverbend: requirements and traceability](docs/case-study/RIVERBEND_REQUIREMENTS.md) follows **Requirements → Configuration → Integration → Migration → Testing → Validation → Go-Live**, with [solution decisions](docs/case-study/RIVERBEND_SOLUTION_DESIGN.md), [source mapping](docs/case-study/RIVERBEND_MAPPING.md), [planned acceptance tests](docs/case-study/RIVERBEND_TEST_PLAN.md) and a [go-live checklist](docs/case-study/RIVERBEND_GO_LIVE_CHECKLIST.md).
 
 The case study identifies a real implementation gap: partial-payment/minimum settings are municipality-wide, so allowing Property Tax partials while requiring full Permit payments needs a future change. Riverbend UAT and go-live remain pending, and its proposed configuration differs from seeded Riverbend. All roles and processes are fictional; no Catalis internal architecture or procedures are represented.
 
@@ -292,22 +292,22 @@ Other boundaries: no refund/void/settlement API, per-user roles, automatic impor
 
 ## Documentation index
 
-| Document                                                                   | What to explore                                                    |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [Implementation guide](CivicPay/docs/IMPLEMENTATION_GUIDE.md)              | Environment setup, SQL Server migrations, integration and handover |
-| [Configuration guide](CivicPay/docs/CONFIGURATION_GUIDE.md)                | Client settings, catalogue, versioning and seeded municipalities   |
-| [API integration guide](CivicPay/docs/API_INTEGRATION_GUIDE.md)            | Endpoint contracts, authentication, validation and retry semantics |
-| [Data migration guide](CivicPay/docs/DATA_MIGRATION_GUIDE.md)              | Exact CSV formats, row outcomes, limits and recovery               |
-| [Architecture](CivicPay/docs/ARCHITECTURE.md)                              | Project boundaries, persistence, telemetry and security tradeoffs  |
-| [Data dictionary](CivicPay/docs/DATA_DICTIONARY.md)                        | Entities, fields, constraints and relationships                    |
-| [Troubleshooting](CivicPay/docs/TROUBLESHOOTING.md)                        | Safe error investigation and correlation-based diagnostics         |
-| [Implementation checklist](CivicPay/docs/IMPLEMENTATION_CHECKLIST.md)      | Reusable discovery, validation and handover checklist              |
-| [Demo walkthrough](CivicPay/docs/DEMO_WALKTHROUGH.md)                      | Five-minute interview walkthrough                                  |
-| [Riverbend case study](CivicPay/docs/case-study/RIVERBEND_REQUIREMENTS.md) | Requirements, design, mapping, testing and release gates           |
-| [Technical audit](CivicPay/docs/TECHNICAL_AUDIT.md)                        | Repaired defects and audit evidence                                |
-| [Initial verification](CivicPay/docs/VERIFICATION.md)                      | Earlier creation-time checks and results                           |
-| [Dashboard verification](CivicPay/docs/UI_UX_VERIFICATION.md)              | Later build/test/runtime evidence, screenshots and remaining gaps  |
-| [README review](CivicPay/docs/README_REVIEW.md)                            | Claim review, clean-source setup and executed API examples         |
+| Document                                                          | What to explore                                                    |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| [Implementation guide](docs/IMPLEMENTATION_GUIDE.md)              | Environment setup, SQL Server migrations, integration and handover |
+| [Configuration guide](docs/CONFIGURATION_GUIDE.md)                | Client settings, catalogue, versioning and seeded municipalities   |
+| [API integration guide](docs/API_INTEGRATION_GUIDE.md)            | Endpoint contracts, authentication, validation and retry semantics |
+| [Data migration guide](docs/DATA_MIGRATION_GUIDE.md)              | Exact CSV formats, row outcomes, limits and recovery               |
+| [Architecture](docs/ARCHITECTURE.md)                              | Project boundaries, persistence, telemetry and security tradeoffs  |
+| [Data dictionary](docs/DATA_DICTIONARY.md)                        | Entities, fields, constraints and relationships                    |
+| [Troubleshooting](docs/TROUBLESHOOTING.md)                        | Safe error investigation and correlation-based diagnostics         |
+| [Implementation checklist](docs/IMPLEMENTATION_CHECKLIST.md)      | Reusable discovery, validation and handover checklist              |
+| [Demo walkthrough](docs/DEMO_WALKTHROUGH.md)                      | Five-minute interview walkthrough                                  |
+| [Riverbend case study](docs/case-study/RIVERBEND_REQUIREMENTS.md) | Requirements, design, mapping, testing and release gates           |
+| [Technical audit](docs/TECHNICAL_AUDIT.md)                        | Repaired defects and audit evidence                                |
+| [Initial verification](docs/VERIFICATION.md)                      | Earlier creation-time checks and results                           |
+| [Dashboard verification](docs/UI_UX_VERIFICATION.md)              | Later build/test/runtime evidence, screenshots and remaining gaps  |
+| [README review](docs/README_REVIEW.md)                            | Claim review, clean-source setup and executed API examples         |
 
 ## Repository layout
 

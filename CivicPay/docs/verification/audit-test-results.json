@@ -1,0 +1,344 @@
+{
+  "configuration": "Release",
+  "sdk": "10.0.401",
+  "projects": [
+    {
+      "project": "CivicPay.UnitTests",
+      "counters": {
+        "total": "27",
+        "executed": "27",
+        "passed": "27",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "tests": [
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Invalid_money_is_rejected(value: \"10000000000\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Duplicate_types_are_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Configured_balance_rules_are_enforced(amount: 25, balance: 100, min: 5, partial: False, code: \"PARTIAL_PAYMENT_NOT_ALLOWED\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Partial_payment_is_accepted_when_enabled",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Money_parser_uses_invariant_decimals(value: \"-2.50\", expected: -2.5)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Malformed_csv_is_rejected(text: \"a\\\"quote,b\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Empty_types_are_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Invalid_money_is_rejected(value: \"CAD 5\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Full_balance_is_accepted_without_partial_payments",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Configured_balance_rules_are_enforced(amount: 4, balance: 100, min: 5, partial: True, code: \"BELOW_MINIMUM\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Invalid_money_is_rejected(value: \"NaN\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Valid_configuration_is_accepted",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Unknown_type_is_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Invalid_money_is_rejected(value: \"1.001\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Minimum_requires_positive_cents(min: 0.001)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Minimum_requires_positive_cents(min: -1)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Whitespace_fields_are_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Invalid_money_is_rejected(value: \"1,000\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Future_date_is_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Csv_handles_quotes_commas_newlines_and_empty_fields",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Malformed_csv_is_rejected(text: \"\\\"closed\\\"x,b\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Malformed_csv_is_rejected(text: \"\\\"unfinished\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Configured_balance_rules_are_enforced(amount: 101, balance: 100, min: 5, partial: True, code: \"OVERPAYMENT\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Unsupported_currency_is_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Extreme_decimal_is_rejected_without_overflow",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Minimum_requires_positive_cents(min: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.UnitTests.RulesTests.Money_parser_uses_invariant_decimals(value: \"12.50\", expected: 12.5)",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "project": "CivicPay.IntegrationTests",
+      "counters": {
+        "total": "45",
+        "executed": "44",
+        "passed": "44",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "tests": [
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Unknown_municipality_is_rejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Service_upload_size_limit_counts_bytes_including_multibyte_utf8",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Configuration_code_cannot_end_with_a_newline",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Accounts_import_reconciles_and_enables_payment",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Identical_reference_is_independent_between_municipalities",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_validation_returns_structured_errors(account: \"PROPERTYTAX-0001\", type: \"PropertyTax\", amount: -10, code: \"INVALID_AMOUNT\", status: 422)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Framework_errors_use_the_documented_error_envelope(url: \"/api/not-an-endpoint\", method: \"GET\", status: 404, code: \"ENDPOINT_NOT_FOUND\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Startup_rejects_MARS_before_connecting_to_a_database",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Fresh_database_without_demo_data_has_usable_catalogue",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Health_dashboard_and_swagger_are_served",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Bad_csv_header_fails_before_creating_batch",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Large_multipart_request_returns_413_envelope",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Parallel_retry_never_creates_two_records",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.All_rejected_import_is_failed",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Reporting_failure_rolls_back_payment_and_marks_batch_failed",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Full_payment_client_rejects_partial_and_accepts_full",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Invalid_json_is_safe_and_logged",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Pagination_overflow_is_a_structured_bad_request(url: \"/api/imports/00000000-0000-0000-0000-000000000001/\"\u00b7\u00b7\u00b7)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Pagination_overflow_is_a_structured_bad_request(url: \"/api/monitoring/accounts?page=2147483647&pageSize=\"\u00b7\u00b7\u00b7)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Import_cleanup_failure_preserves_original_exception_and_rolls_back",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Foreign_key_failure_is_not_mislabeled_as_retryable_conflict",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Unexpected_database_failure_returns_safe_500_and_persists_correlation",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.SqlServerTests.SqlServer_migrations_constraints_and_seeding",
+          "outcome": "NotExecuted"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Disabled_type_with_outstanding_accounts_cannot_be_removed",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Concurrent_full_balance_http_retries_debit_once",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_validation_returns_structured_errors(account: \"PROPERTYTAX-0001\", type: \"Utility\", amount: 25, code: \"ACCOUNT_TYPE_MISMATCH\", status: 422)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_validation_returns_structured_errors(account: \"Missing\", type: \"PropertyTax\", amount: 25, code: \"ACCOUNT_NOT_FOUND\", status: 404)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Invalid_utf8_import_is_rejected_before_creating_a_batch",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Framework_errors_use_the_documented_error_envelope(url: \"/api/payments\", method: \"POST\", status: 415, code: \"UNSUPPORTED_MEDIA_TYPE\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Synthetic_seed_events_cannot_fabricate_measured_request_metrics",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.SecurityTests.Secured_mode_requires_key_and_documents_it_in_OpenApi",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Account_import_changes_configuration_concurrency_token",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Monitoring_utc_date_and_municipality_filters_exclude_other_records",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_validation_returns_structured_errors(account: \"PROPERTYTAX-0001\", type: \"PropertyTax\", amount: 1, code: \"BELOW_MINIMUM\", status: 422)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Concurrent_same_payment_imports_report_one_import_and_one_skip",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_validation_returns_structured_errors(account: \"PROPERTYTAX-0001\", type: \"ParkingTicket\", amount: 25, code: \"UNSUPPORTED_PAYMENT_TYPE\", status: 422)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Municipality_configuration_create_update_and_version_conflict",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Framework_errors_use_the_documented_error_envelope(url: \"/api/payments\", method: \"DELETE\", status: 405, code: \"METHOD_NOT_ALLOWED\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Monitoring_filters_batches_before_applying_display_limit",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Database_constraints_reject_negative_balance",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Custom_SQLite_connection_cannot_disable_relational_integrity",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Invalid_rows_are_reported_and_totals_are_honest",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Valid_import_reconciles_and_repeat_skips",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.AuditRegressionTests.Full_balance_retry_committed_between_reference_and_balance_reads_replays",
+          "outcome": "Passed"
+        },
+        {
+          "name": "CivicPay.IntegrationTests.ApiTests.Payment_success_replay_and_conflict_are_atomic",
+          "outcome": "Passed"
+        }
+      ]
+    }
+  ],
+  "passed": 71,
+  "failed": 0,
+  "skipped": 1,
+  "publishedApiSha256": "b0a75d5bb77798e38384166a8ffb2110da993e56765099f9a31ee348bec5ef32"
+}

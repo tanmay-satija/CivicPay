@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "parameters": "--vulnerable --include-transitive",
+  "sources": [
+    "https://api.nuget.org/v3/index.json"
+  ],
+  "projects": [
+    {
+      "path": "<workspace>/CivicPay/src/CivicPay.Api/CivicPay.Api.csproj"
+    },
+    {
+      "path": "<workspace>/CivicPay/src/CivicPay.Application/CivicPay.Application.csproj"
+    },
+    {
+      "path": "<workspace>/CivicPay/src/CivicPay.Domain/CivicPay.Domain.csproj"
+    },
+    {
+      "path": "<workspace>/CivicPay/src/CivicPay.Infrastructure/CivicPay.Infrastructure.csproj"
+    },
+    {
+      "path": "<workspace>/CivicPay/tests/CivicPay.IntegrationTests/CivicPay.IntegrationTests.csproj"
+    },
+    {
+      "path": "<workspace>/CivicPay/tests/CivicPay.UnitTests/CivicPay.UnitTests.csproj"
+    }
+  ]
+}

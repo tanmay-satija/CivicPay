@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#102d35" />
+    <title>CivicPay · Integration operations</title>
+    <link rel="stylesheet" href="/styles.css?v=2" />
+    <script defer src="/app.js?v=2"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+    <aside id="sidebar" aria-label="Workspace navigation">
+      <button
+        id="close-navigation"
+        class="icon-button sidebar-close"
+        aria-label="Close navigation"
+      >
+        ✕
+      </button>
+      <a class="brand" href="#overview"
+        ><span class="mark" aria-hidden="true"
+          ><svg viewBox="0 0 32 32">
+            <path
+              d="M7 24V12l9-5 9 5v12M4 25h24M11 14v7m5-7v7m5-7v7"
+            /></svg></span
+        ><span>CivicPay<small>INTEGRATION OPERATIONS</small></span></a
+      >
+      <div class="workspace-label">
+        <span class="workspace-icon">M</span>
+        <div>Municipal workspace<small>Implementation team</small></div>
+      </div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <button data-view="overview">
+          <span data-icon="overview"></span>Overview
+        </button>
+        <button data-view="municipalities">
+          <span data-icon="municipalities"></span>Municipalities
+        </button>
+        <button data-view="transactions">
+          <span data-icon="transactions"></span>Transactions
+        </button>
+        <button data-view="imports">
+          <span data-icon="imports"></span>Imports & reconciliation
+        </button>
+        <div class="nav-label">DIAGNOSTICS</div>
+        <button data-view="health">
+          <span data-icon="health"></span>Integration health
+        </button>
+        <button data-view="errors">
+          <span data-icon="errors"></span>Error explorer<span
+            id="error-nav-count"
+            class="nav-count"
+            hidden
+          ></span>
+        </button>
+      </nav>
+      <div class="aside-bottom">
+        <span class="sandbox-dot"></span> Synthetic environment
+        <p>Fictional municipalities.<br />No real payments or client data.</p>
+        <a href="/swagger" target="_blank" rel="noopener"
+          >API documentation <span aria-hidden="true">↗</span></a
+        >
+        <div class="sidebar-profile">
+          <span class="avatar">IS</span>
+          <div>Implementation specialist<small>Sandbox access</small></div>
+        </div>
+      </div>
+    </aside>
+    <div class="workspace">
+      <header>
+        <div class="header-left">
+          <button
+            id="menu-toggle"
+            class="icon-button mobile-menu"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="sidebar"
+          >
+            ☰</button
+          ><span class="breadcrumb"
+            >Workspace <span class="slash">/</span>
+            <span id="crumb">Overview</span></span
+          >
+        </div>
+        <div class="header-right">
+          <span class="demo-tag">SYNTHETIC DATA</span
+          ><span id="connection" class="connection">Connecting</span
+          ><button class="subtle" id="access">API access</button
+          ><span class="avatar">IS</span>
+        </div>
+      </header>
+      <main id="main" tabindex="-1">
+        <div class="page-heading">
+          <div>
+            <div class="eyebrow">MUNICIPAL INTEGRATIONS</div>
+            <h1 id="title">Integration overview</h1>
+            <p id="subtitle">
+              Monitor client integrations. Find issues. Keep migrations moving.
+            </p>
+          </div>
+          <button
+            id="refresh"
+            class="button secondary"
+            aria-label="Refresh data"
+          >
+            <span data-icon="refresh"></span><span>Refresh data</span>
+          </button>
+        </div>
+        <div class="filterbar" aria-label="Reporting filters">
+          <div class="filter-group">
+            <label for="municipality">Municipality</label
+            ><select id="municipality">
+              <option value="">All municipalities</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="range">Reporting window</label
+            ><select id="range">
+              <option value="28">Last 28 days</option>
+              <option value="7">Last 7 days</option>
+              <option value="1">Today</option>
+              <option value="custom">Custom dates</option>
+              <option value="all">All time</option>
+            </select>
+          </div>
+          <div class="filter-group date-filter">
+            <label for="from">From (UTC)</label><input type="date" id="from" />
+          </div>
+          <div class="filter-group date-filter">
+            <label for="to">To (UTC)</label><input type="date" id="to" />
+          </div>
+          <button class="subtle" id="reset">Reset</button
+          ><span id="updated" role="status">Connecting to API…</span>
+        </div>
+        <div id="notice" role="alert" hidden></div>
+        <div id="content" aria-live="polite" aria-busy="true"></div>
+        <footer>
+          <span
+            >CivicPay · Synthetic portfolio environment · No real payments</span
+          ><span>CAD amounts · UTC reporting</span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="modal" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow" id="modal-eyebrow">WORKSPACE</span>
+          <h2 id="modal-title"></h2>
+        </div>
+        <button class="icon-button" id="close-modal" aria-label="Close dialog">
+          ✕
+        </button>
+      </div>
+      <div id="modal-body"></div>
+      <div id="modal-result" role="status"></div>
+    </dialog>
+  </body>
+</html>

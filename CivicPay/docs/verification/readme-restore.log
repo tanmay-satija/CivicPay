@@ -1,0 +1,7 @@
+  Determining projects to restore...
+  Restored /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Domain/CivicPay.Domain.csproj (in 36 ms).
+  Restored /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Application/CivicPay.Application.csproj (in 38 ms).
+  Restored /private/tmp/civicpay-readme-check/CivicPay/tests/CivicPay.UnitTests/CivicPay.UnitTests.csproj (in 580 ms).
+  Restored /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Api/CivicPay.Api.csproj (in 593 ms).
+  Restored /private/tmp/civicpay-readme-check/CivicPay/tests/CivicPay.IntegrationTests/CivicPay.IntegrationTests.csproj (in 600 ms).
+  Restored /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Infrastructure/CivicPay.Infrastructure.csproj (in 609 ms).

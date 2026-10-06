@@ -1,0 +1,97 @@
+{
+  "executedAtUtc": "2026-10-06T08:22:03.696416+00:00",
+  "cleanSourceCopy": true,
+  "remoteCloneExecuted": false,
+  "nugetCacheUsed": true,
+  "sdk": "10.0.401",
+  "restore": "passed",
+  "releaseBuild": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "dotnetTests": {
+    "passed": 71,
+    "skipped": 1,
+    "sqlServerExecuted": false
+  },
+  "dashboardTests": {
+    "passed": 4,
+    "node": "24.13.0"
+  },
+  "readmeCurlResponses": [
+    {
+      "httpStatus": 201,
+      "response": {
+        "batchId": "f0779dd6-7b76-40f7-8f31-10ae4bf483e6",
+        "kind": "accounts",
+        "sourceRecordCount": 3,
+        "importedRecordCount": 3,
+        "rejectedRecordCount": 0,
+        "skippedRecordCount": 0,
+        "totalSourceAmount": 1575.0,
+        "totalImportedAmount": 1575.0,
+        "difference": 0.0,
+        "sourceAmountComplete": true,
+        "status": "RECONCILED"
+      }
+    },
+    {
+      "httpStatus": 201,
+      "response": {
+        "success": true,
+        "transactionId": "1a4ee76a-bb4b-4216-8be9-c9a84af983e6",
+        "status": "Accepted",
+        "replayed": false
+      }
+    },
+    {
+      "httpStatus": 200,
+      "response": {
+        "success": true,
+        "transactionId": "1a4ee76a-bb4b-4216-8be9-c9a84af983e6",
+        "status": "Accepted",
+        "replayed": true
+      }
+    },
+    {
+      "httpStatus": 422,
+      "response": {
+        "success": false,
+        "errorCode": "BELOW_MINIMUM",
+        "message": "Amount is below the municipality minimum payment.",
+        "correlationId": "c4c423ed01144ae981d973e0ebf52c41"
+      }
+    }
+  ],
+  "runtime": {
+    "health": {
+      "status": "Healthy",
+      "database": "Sqlite",
+      "synthetic": true
+    },
+    "oneAcceptedReadmePayment": true,
+    "balanceAfterNewReplayAndFailure": 975.0,
+    "swaggerAndDashboard": true
+  },
+  "pythonSmoke": "passed",
+  "localReadmePreview": {
+    "mermaidDiagramsRendered": 3,
+    "allEmbeddedImagesLoaded": true,
+    "quickStartAnchorNavigated": true,
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "liveGitHubRender": false
+  },
+  "dockerExecuted": false,
+  "githubActionsExecuted": false,
+  "unchangedOriginalBackendAndDotnetFiles": 43,
+  "localReferencesChecked": 119,
+  "markdownFormatting": "passed",
+  "bashSyntax": "passed",
+  "originalDashboardHealthAfterVerification": {
+    "status": "Healthy",
+    "database": "Sqlite",
+    "synthetic": true
+  },
+  "temporaryVerificationServicesStopped": true
+}

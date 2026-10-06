@@ -1,0 +1,39 @@
+{
+  "views": [
+    {
+      "button": "◫ Overview",
+      "heading": "Implementation overview"
+    },
+    {
+      "button": "▦ Municipalities",
+      "heading": "Municipalities"
+    },
+    {
+      "button": "⇄ Transactions",
+      "heading": "Transactions"
+    },
+    {
+      "button": "↥ Imports & reconciliation",
+      "heading": "Imports & reconciliation"
+    },
+    {
+      "button": "⌁ Integration health",
+      "heading": "Integration health"
+    },
+    {
+      "button": "⊙ Error explorer",
+      "heading": "Error explorer"
+    }
+  ],
+  "repeatedConfigurationSave": "passed: 5 → 6 → 5 in the same dialog",
+  "paymentAccountBeyondPage200": "passed: LAST-202, account 202 of 202",
+  "paymentAndReplay": "passed: same transaction ID, replayed=true",
+  "overpayment": "passed: OVERPAYMENT displayed with correlation ID",
+  "emptyAccountSelection": "passed: explanatory dialog without a submit form",
+  "municipalityOutcomeAndUtcDateFilters": "passed: UI-PAGING-AUDIT rejected payment visible",
+  "importRowInspection": "passed: seven rejected rows and one skipped row, unparseable source visible",
+  "swaggerTryItOut": "passed: GET /api/health returned 200",
+  "consoleWarningsAndErrors": [],
+  "browserCsvUpload": "unverified: chooser event timed out; native Codex UI control denied by tool policy",
+  "capturedAtUtc": "2026-10-06T00:56:56.750Z"
+}

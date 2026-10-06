@@ -1,0 +1,12 @@
+✔ diagnostics redact quoted, JSON and unquoted credential values (0.713875ms)
+✔ diagnostics hide bearer tokens and connection details (0.098459ms)
+✔ diagnostics remove .NET exception headers and stack frames while preserving public text (0.077459ms)
+✔ untrusted diagnostic text cannot inject HTML through the text escaper (0.374292ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 32.78625

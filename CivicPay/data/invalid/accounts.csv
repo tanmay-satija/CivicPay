@@ -1,0 +1,5 @@
+municipalityCode,accountNumber,paymentType,balance
+DEMO-COUNTY,,Utility,100
+PINE-VALLEY,LEGACY-BAD,Utility,100
+RIVERBEND,LEGACY-NEG,Utility,-20
+UNKNOWN-DEMO,LEGACY-UNKNOWN,Utility,50

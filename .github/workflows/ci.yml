@@ -1,0 +1,49 @@
+name: CivicPay verification
+on: [push, pull_request]
+jobs:
+  portable:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: CivicPay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet restore
+      - run: dotnet build --no-restore -c Release
+      - run: dotnet test --no-build -c Release --logger trx
+      - run: node --check dashboard/app.js
+      - run: node --test tests/dashboard/*.test.cjs
+      - run: docker compose --env-file .env.example config --quiet
+      - run: docker build -t civicpay:ci .
+  sqlserver:
+    if: ${{ vars.CIVICPAY_SQL_TESTS == 'true' }}
+    runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: Y
+          MSSQL_SA_PASSWORD: ${{ secrets.CIVICPAY_CI_SQL_PASSWORD }}
+        ports: ["1433:1433"]
+    env:
+      SQL_TEST_PASSWORD: ${{ secrets.CIVICPAY_CI_SQL_PASSWORD }}
+      CIVICPAY_TEST_SQLSERVER: "Server=localhost,1433;Database=CivicPayTests_CI;User Id=sa;Password=${{ secrets.CIVICPAY_CI_SQL_PASSWORD }};Encrypt=True;TrustServerCertificate=True"
+    defaults:
+      run:
+        working-directory: CivicPay
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Wait for SQL Server
+        run: |
+          for attempt in {1..30}; do
+            if docker exec "${{ job.services.sqlserver.id }}" /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "$SQL_TEST_PASSWORD" -C -Q 'SELECT 1' -b -o /dev/null; then exit 0; fi
+            sleep 2
+          done
+          exit 1
+      - run: dotnet test tests/CivicPay.IntegrationTests --filter FullyQualifiedName~SqlServerTests --logger trx

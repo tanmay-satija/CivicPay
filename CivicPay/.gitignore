@@ -1,0 +1,12 @@
+**/bin/
+**/obj/
+**/TestResults/
+.env*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+artifacts/
+.DS_Store
+
+**/__pycache__/

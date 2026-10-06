@@ -1,0 +1,12 @@
+  CivicPay.Domain -> <workspace>/CivicPay/src/CivicPay.Domain/bin/Release/net10.0/CivicPay.Domain.dll
+  CivicPay.Application -> <workspace>/CivicPay/src/CivicPay.Application/bin/Release/net10.0/CivicPay.Application.dll
+  CivicPay.Infrastructure -> <workspace>/CivicPay/src/CivicPay.Infrastructure/bin/Release/net10.0/CivicPay.Infrastructure.dll
+  CivicPay.UnitTests -> <workspace>/CivicPay/tests/CivicPay.UnitTests/bin/Release/net10.0/CivicPay.UnitTests.dll
+  CivicPay.Api -> <workspace>/CivicPay/src/CivicPay.Api/bin/Release/net10.0/CivicPay.Api.dll
+  CivicPay.IntegrationTests -> <workspace>/CivicPay/tests/CivicPay.IntegrationTests/bin/Release/net10.0/CivicPay.IntegrationTests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.57

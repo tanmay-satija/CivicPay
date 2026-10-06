@@ -1,0 +1,83 @@
+{
+  "baseUrl": "http://127.0.0.1:5080",
+  "municipality": "AUDIT-603F07B6",
+  "executedAtUtc": "2026-10-06T00:54:24.071010+00:00",
+  "checks": [
+    "Health; configuration create/read/update; enabled types; stale-version 409",
+    "Account import; exact account skip; conflicting account rejected; version advances",
+    "Successful, mixed, all-rejected and duplicate imports; exact totals and row pagination",
+    "Bad header, malformed quotes, invalid UTF-8, oversize bytes and excess rows rejected",
+    "Eight full-balance retries; one debit; conflicting retry 409; concurrent distinct payments prevent overdraft; case-sensitive references",
+    "Structured 400/404/405/409/413/415/422 responses and correlation IDs",
+    "Monitoring municipality, UTC dates and outcomes; CAD 305 total; final balances A=5/B=0/C=0",
+    "Swagger paths/schema/API-key contract; dashboard HTML/JS/CSS and CSP served",
+    "Independent SQLite queries confirm report amounts/completeness, balances and exactly one full-retry transaction"
+  ],
+  "reports": {
+    "accounts": {
+      "batchId": "566e24d6-db0b-45d6-a490-8cc73dfa19d0",
+      "kind": "accounts",
+      "sourceRecordCount": 3,
+      "importedRecordCount": 3,
+      "rejectedRecordCount": 0,
+      "skippedRecordCount": 0,
+      "totalSourceAmount": 310.0,
+      "totalImportedAmount": 310.0,
+      "difference": 0.0,
+      "sourceAmountComplete": true,
+      "status": "RECONCILED"
+    },
+    "validPayments": {
+      "batchId": "2e336408-9570-4278-9f26-afb7d7a778c0",
+      "kind": "payments",
+      "sourceRecordCount": 3,
+      "importedRecordCount": 3,
+      "rejectedRecordCount": 0,
+      "skippedRecordCount": 0,
+      "totalSourceAmount": 135.0,
+      "totalImportedAmount": 135.0,
+      "difference": 0.0,
+      "sourceAmountComplete": true,
+      "status": "RECONCILED"
+    },
+    "duplicatePayments": {
+      "batchId": "db91d583-3bf7-4eed-93b8-060789216ad0",
+      "kind": "payments",
+      "sourceRecordCount": 3,
+      "importedRecordCount": 0,
+      "rejectedRecordCount": 0,
+      "skippedRecordCount": 3,
+      "totalSourceAmount": 135.0,
+      "totalImportedAmount": 0.0,
+      "difference": 135.0,
+      "sourceAmountComplete": true,
+      "status": "WARNING"
+    },
+    "mixedPayments": {
+      "batchId": "e061f013-57e0-4e44-8b30-61db0da3d93b",
+      "kind": "payments",
+      "sourceRecordCount": 5,
+      "importedRecordCount": 1,
+      "rejectedRecordCount": 4,
+      "skippedRecordCount": 0,
+      "totalSourceAmount": 59.0,
+      "totalImportedAmount": 10.0,
+      "difference": 49.0,
+      "sourceAmountComplete": false,
+      "status": "WARNING"
+    },
+    "failedPayments": {
+      "batchId": "4a5e1137-87c6-467b-9e69-a7e2667851bd",
+      "kind": "payments",
+      "sourceRecordCount": 1,
+      "importedRecordCount": 0,
+      "rejectedRecordCount": 1,
+      "skippedRecordCount": 0,
+      "totalSourceAmount": 10.0,
+      "totalImportedAmount": 0.0,
+      "difference": 10.0,
+      "sourceAmountComplete": true,
+      "status": "FAILED"
+    }
+  }
+}

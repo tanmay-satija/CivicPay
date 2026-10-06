@@ -1,0 +1,12 @@
+  CivicPay.Domain -> /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Domain/bin/Release/net10.0/CivicPay.Domain.dll
+  CivicPay.Application -> /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Application/bin/Release/net10.0/CivicPay.Application.dll
+  CivicPay.UnitTests -> /private/tmp/civicpay-readme-check/CivicPay/tests/CivicPay.UnitTests/bin/Release/net10.0/CivicPay.UnitTests.dll
+  CivicPay.Infrastructure -> /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Infrastructure/bin/Release/net10.0/CivicPay.Infrastructure.dll
+  CivicPay.Api -> /private/tmp/civicpay-readme-check/CivicPay/src/CivicPay.Api/bin/Release/net10.0/CivicPay.Api.dll
+  CivicPay.IntegrationTests -> /private/tmp/civicpay-readme-check/CivicPay/tests/CivicPay.IntegrationTests/bin/Release/net10.0/CivicPay.IntegrationTests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.69
